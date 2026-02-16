@@ -1,0 +1,116 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+import { useLanguage } from '@/context/LanguageContext';
+
+const projects = [
+    {
+        title: "Quinta da Marinha - Portugal",
+        category: "Reels",
+        year: "2025",
+        videoUrl: "https://www.youtube.com/embed/QfPYwZ9exrQ"
+    },
+    {
+        title: "WOW - Cyrela",
+        category: "Reels",
+        year: "2025",
+        videoUrl: "https://www.youtube.com/embed/gZZNUYsEAH4"
+    },
+    {
+        title: "Grand Village - Living",
+        category: "Reels",
+        year: "2025",
+        videoUrl: "https://www.youtube.com/embed/ln-UC5qEoMQ"
+    },
+    {
+        title: "Vila Real - Douglas Navarro",
+        category: "Reels",
+        year: "2025",
+        videoUrl: "https://www.youtube.com/embed/NR4PYkAsUfk"
+    },
+    {
+        title: "Vila Real - Adore",
+        category: "Reels",
+        year: "2025",
+        videoUrl: "https://www.youtube.com/embed/aCC6ZVRwVlg"
+    },
+    {
+        title: "Xapada - Forbens",
+        category: "Reels",
+        year: "2025",
+        videoUrl: "https://www.youtube.com/embed/_XvmToxEGhU"
+    },
+    {
+        title: "Portugal - Apartamento Praia",
+        category: "Reels",
+        year: "2025",
+        videoUrl: "https://www.youtube.com/embed/lLWfDYp2Ics"
+    },
+    {
+        title: "Terras de Sao José I",
+        category: "Reels",
+        year: "2025",
+        videoUrl: "https://www.youtube.com/embed/n_IGTUTiiRg"
+    }
+];
+
+export default function Projects() {
+    const { t } = useLanguage();
+
+    return (
+        <section className="min-h-screen w-full bg-white px-6 py-32 relative z-10">
+            <div className="max-w-7xl mx-auto">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-4xl md:text-6xl font-bold text-black mb-24 tracking-tight"
+                >
+                    {t.projects.title}
+                </motion.h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
+                    {projects.map((project, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="group cursor-pointer"
+                        >
+                            {/* Media Container */}
+                            <div className="aspect-[9/16] md:aspect-[4/3] bg-zinc-900 rounded-lg mb-6 overflow-hidden relative">
+                                {project.videoUrl ? (
+                                    <iframe
+                                        src={project.videoUrl}
+                                        className="absolute inset-0 w-full h-full"
+                                        title={project.title}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    />
+                                ) : (
+                                    <>
+                                        <div className="absolute inset-0 bg-zinc-800 transition-transform duration-700 group-hover:scale-105" />
+                                        {/* Simulate image */}
+                                    </>
+                                )}
+                            </div>
+
+                            <div className="flex justify-between items-baseline border-b border-zinc-200 pb-4 transition-colors group-hover:border-black">
+                                <h3 className="text-2xl md:text-3xl font-medium text-black group-hover:text-zinc-600 transition-colors">
+                                    {project.title}
+                                </h3>
+                                <div className="flex gap-4 text-zinc-500 font-mono text-sm">
+                                    <span>{project.category}</span>
+                                    <span>{project.year}</span>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

@@ -40,7 +40,7 @@ export const translations = {
                 },
                 ultra: {
                     name: 'Ultra',
-                    features: ['Projetos Personalizados', 'Documentários Imobiliários', 'Equipe Dedicada', 'Campanhas Publicitárias', 'Negociado à Parte']
+                    features: ['Acima de 10 Reels', 'Pacote Personalizado', 'Negociação à Parte']
                 }
             }
         }
@@ -84,7 +84,7 @@ export const translations = {
                 },
                 ultra: {
                     name: 'Ultra',
-                    features: ['Custom Projects', 'Real Estate Documentaries', 'Dedicated Team', 'Ad Campaigns', 'Negotiated Separately']
+                    features: ['Above 10 Reels', 'Custom Package', 'Negotiated Separately']
                 }
             }
         }
@@ -128,7 +128,7 @@ export const translations = {
                 },
                 ultra: {
                     name: 'Ultra',
-                    features: ['Proyectos Personalizados', 'Documentales Inmobiliarios', 'Equipo Dedicado', 'Campañas Publicitarias', 'Negociado Aparte']
+                    features: ['Más de 10 Reels', 'Paquete Personalizado', 'Negociado Aparte']
                 }
             }
         }

@@ -59,18 +59,18 @@ export default function Projects() {
     const { t } = useLanguage();
 
     return (
-        <section className="min-h-screen w-full bg-white px-6 py-32 relative z-10">
+        <section className="min-h-screen w-full bg-white px-4 md:px-6 py-16 md:py-32 relative z-10">
             <div className="max-w-7xl mx-auto">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-6xl font-bold text-black mb-24 tracking-tight"
+                    className="text-3xl md:text-6xl font-bold text-black mb-12 md:mb-24 tracking-tight"
                 >
                     {t.projects.title}
                 </motion.h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-12 gap-y-12 md:gap-y-24">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
@@ -81,7 +81,7 @@ export default function Projects() {
                             className="group cursor-pointer"
                         >
                             {/* Media Container */}
-                            <div className="aspect-[9/16] md:aspect-[4/3] bg-zinc-900 rounded-lg mb-6 overflow-hidden relative">
+                            <div className="aspect-[9/16] md:aspect-[4/3] bg-zinc-900 rounded-lg mb-4 md:mb-6 overflow-hidden relative">
                                 {project.videoUrl ? (
                                     <iframe
                                         src={project.videoUrl}
@@ -98,8 +98,8 @@ export default function Projects() {
                                 )}
                             </div>
 
-                            <div className="flex justify-between items-baseline border-b border-zinc-200 pb-4 transition-colors group-hover:border-black">
-                                <h3 className="text-2xl md:text-3xl font-medium text-black group-hover:text-zinc-600 transition-colors">
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-baseline border-b border-zinc-200 pb-3 md:pb-4 gap-2 md:gap-0 transition-colors group-hover:border-black">
+                                <h3 className="text-xl md:text-3xl font-medium text-black group-hover:text-zinc-600 transition-colors">
                                     {project.title}
                                 </h3>
                                 <div className="flex gap-4 text-zinc-500 font-mono text-sm">

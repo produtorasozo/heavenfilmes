@@ -7,15 +7,15 @@ export default function Plans() {
     const { t } = useLanguage();
 
     return (
-        <main className="min-h-screen bg-white text-black pt-32 pb-20 px-6">
+        <main className="min-h-screen bg-white text-black pt-20 md:pt-32 pb-12 md:pb-20 px-4 md:px-6">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-24"
+                    className="text-center mb-12 md:mb-24"
                 >
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+                    <h1 className="text-4xl md:text-7xl font-bold mb-4 md:mb-6 tracking-tight">
                         {t.plans.title}
                     </h1>
                     <p className="text-zinc-600 text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide uppercase">
@@ -23,7 +23,7 @@ export default function Plans() {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-24">
                     {/* Single Video Plan */}
                     <div className="bg-black text-white p-8 rounded-2xl shadow-2xl hover:scale-[1.02] transition-transform duration-300 flex flex-col">
                         <h3 className="text-2xl font-bold mb-6">{t.plans.packages.single.name}</h3>

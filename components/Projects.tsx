@@ -27,7 +27,7 @@ const projects = [
         title: "Vila Real - Douglas Navarro",
         category: "Reels",
         year: "2025",
-        videoUrl: "https://www.youtube.com/embed/NR4PYkAsUfk"
+        videoUrl: "https://player.vimeo.com/video/1165466983"
     },
     {
         title: "Vila Real - Adore",

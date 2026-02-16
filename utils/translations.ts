@@ -49,7 +49,7 @@ export const translations = {
         nav: {
             about: 'About Us',
             contact: 'Contact',
-            plans: 'Plans',
+            plans: 'Prices',
         },
         hero: {
             role: 'Real Estate Videos',

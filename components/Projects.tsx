@@ -39,7 +39,7 @@ const projects = [
         title: "Xapada - Forbens",
         category: "Reels",
         year: "2025",
-        videoUrl: "https://www.youtube.com/embed/_XvmToxEGhU"
+        videoUrl: "https://player.vimeo.com/video/1165477215"
     },
     {
         title: "Portugal - Apartamento Praia",

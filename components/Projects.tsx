@@ -21,7 +21,7 @@ const projects = [
         title: "Grand Village - Living",
         category: "Reels",
         year: "2025",
-        videoUrl: "https://www.youtube.com/embed/ln-UC5qEoMQ"
+        videoUrl: "https://player.vimeo.com/video/1165476441"
     },
     {
         title: "Vila Real - Douglas Navarro",

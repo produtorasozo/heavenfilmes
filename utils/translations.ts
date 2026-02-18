@@ -26,7 +26,7 @@ export const translations = {
             cta: 'Contratar Agora',
             contact_button: 'Falar com Especialista',
             toggle: {
-                realEstate: 'Imobiliárias',
+                realEstate: 'Gravação e Edição',
                 videomaker: 'Edição'
             },
             packages: {
@@ -98,7 +98,7 @@ export const translations = {
             cta: 'Hire Now',
             contact_button: 'Talk to Expert',
             toggle: {
-                realEstate: 'Real Estate',
+                realEstate: 'Recording & Editing',
                 videomaker: 'Editing'
             },
             packages: {
@@ -170,7 +170,7 @@ export const translations = {
             cta: 'Contratar Ahora',
             contact_button: 'Hablar con Especialista',
             toggle: {
-                realEstate: 'Inmobiliarias',
+                realEstate: 'Grabación y Edición',
                 videomaker: 'Edición'
             },
             packages: {

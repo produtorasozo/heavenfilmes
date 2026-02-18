@@ -22,7 +22,7 @@ export const translations = {
         },
         plans: {
             title: 'Nossos Pacotes',
-            subtitle: 'Escolha o plano ideal para o seu imóvel',
+            subtitle: 'Escolha o plano ideal para você',
             cta: 'Contratar Agora',
             contact_button: 'Falar com Especialista',
             packages: {
@@ -41,6 +41,30 @@ export const translations = {
                 ultra: {
                     name: 'Ultra',
                     features: ['Acima de 10 Reels', 'Pacote Personalizado', 'Negociação à Parte']
+                }
+            }
+        },
+        plans_videomaker: {
+            title: 'Planos para Videomakers',
+            subtitle: 'Eleve seu portfólio de edição',
+            cta: 'Contratar Edição',
+            contact_button: 'Falar com Especialista',
+            packages: {
+                starter: {
+                    name: '1 Reel',
+                    features: ['Edição Profissional', 'Trilha Sonora', 'Até 7 dias de entrega', 'Custo adicional p/ IA']
+                },
+                pro: {
+                    name: 'Pacote 5 Reels',
+                    features: ['Edição Profissional', 'Trilha Sonora', 'Até 7 dias de entrega', 'Custo adicional p/ IA']
+                },
+                expert: {
+                    name: 'Pacote 10 Reels',
+                    features: ['Edição Profissional', 'Trilha Sonora', 'Até 7 dias de entrega', 'Custo adicional p/ IA']
+                },
+                agency: {
+                    name: 'Personalizado',
+                    features: ['Pacote sob medida', 'Prazo a combinar', 'Custo adicional p/ IA']
                 }
             }
         }
@@ -66,7 +90,7 @@ export const translations = {
         },
         plans: {
             title: 'Our Packages',
-            subtitle: 'Choose the perfect plan for your property',
+            subtitle: 'Choose the perfect plan for you',
             cta: 'Hire Now',
             contact_button: 'Talk to Expert',
             packages: {
@@ -85,6 +109,30 @@ export const translations = {
                 ultra: {
                     name: 'Ultra',
                     features: ['Above 10 Reels', 'Custom Package', 'Negotiated Separately']
+                }
+            }
+        },
+        plans_videomaker: {
+            title: 'Plans for Videomakers',
+            subtitle: 'Elevate your editing portfolio',
+            cta: 'Hire Editing',
+            contact_button: 'Talk to Expert',
+            packages: {
+                starter: {
+                    name: '1 Reel',
+                    features: ['Professional Editing', 'Soundtrack', 'Up to 7 days delivery', 'Extra cost for AI']
+                },
+                pro: {
+                    name: '5 Reels Pack',
+                    features: ['Professional Editing', 'Soundtrack', 'Up to 7 days delivery', 'Extra cost for AI']
+                },
+                expert: {
+                    name: '10 Reels Pack',
+                    features: ['Professional Editing', 'Soundtrack', 'Up to 7 days delivery', 'Extra cost for AI']
+                },
+                agency: {
+                    name: 'Custom',
+                    features: ['Custom Package', 'Custom Deadline', 'Extra cost for AI']
                 }
             }
         }
@@ -129,6 +177,30 @@ export const translations = {
                 ultra: {
                     name: 'Ultra',
                     features: ['Más de 10 Reels', 'Paquete Personalizado', 'Negociado Aparte']
+                }
+            }
+        },
+        plans_videomaker: {
+            title: 'Planes para Videomakers',
+            subtitle: 'Eleva tu portafolio de edición',
+            cta: 'Contratar Edición',
+            contact_button: 'Hablar con Especialista',
+            packages: {
+                starter: {
+                    name: '1 Reel',
+                    features: ['Edición Profesional', 'Banda Sonora', 'Hasta 7 días de entrega', 'Costo adicional por IA']
+                },
+                pro: {
+                    name: 'Paquete 5 Reels',
+                    features: ['Edición Profesional', 'Banda Sonora', 'Hasta 7 días de entrega', 'Costo adicional por IA']
+                },
+                expert: {
+                    name: 'Paquete 10 Reels',
+                    features: ['Edición Profesional', 'Banda Sonora', 'Hasta 7 días de entrega', 'Costo adicional por IA']
+                },
+                agency: {
+                    name: 'Personalizado',
+                    features: ['Paquete a medida', 'Plazo a convenir', 'Costo adicional por IA']
                 }
             }
         }

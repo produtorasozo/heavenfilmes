@@ -27,7 +27,7 @@ export const translations = {
             contact_button: 'Falar com Especialista',
             toggle: {
                 realEstate: 'Imobiliárias',
-                videomaker: 'Videomakers'
+                videomaker: 'Edição'
             },
             packages: {
                 single: {
@@ -49,7 +49,7 @@ export const translations = {
             }
         },
         plans_videomaker: {
-            title: 'Planos para Videomakers',
+            title: 'Planos de Edição',
             subtitle: 'Eleve seu portfólio de edição',
             cta: 'Contratar Edição',
             contact_button: 'Falar com Especialista',
@@ -99,7 +99,7 @@ export const translations = {
             contact_button: 'Talk to Expert',
             toggle: {
                 realEstate: 'Real Estate',
-                videomaker: 'Videomakers'
+                videomaker: 'Editing'
             },
             packages: {
                 single: {
@@ -121,7 +121,7 @@ export const translations = {
             }
         },
         plans_videomaker: {
-            title: 'Plans for Videomakers',
+            title: 'Editing Plans',
             subtitle: 'Elevate your editing portfolio',
             cta: 'Hire Editing',
             contact_button: 'Talk to Expert',
@@ -171,7 +171,7 @@ export const translations = {
             contact_button: 'Hablar con Especialista',
             toggle: {
                 realEstate: 'Inmobiliarias',
-                videomaker: 'Videomakers'
+                videomaker: 'Edición'
             },
             packages: {
                 single: {
@@ -193,7 +193,7 @@ export const translations = {
             }
         },
         plans_videomaker: {
-            title: 'Planes para Videomakers',
+            title: 'Planes de Edición',
             subtitle: 'Eleva tu portafolio de edición',
             cta: 'Contratar Edición',
             contact_button: 'Hablar con Especialista',

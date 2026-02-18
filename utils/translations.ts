@@ -104,19 +104,19 @@ export const translations = {
             packages: {
                 single: {
                     name: '1 Video',
-                    features: ['1 Reel (up to 60s)', 'Professional Recording', 'Professional Editing', 'Soundtrack', 'Color Grading', 'Script & Direction', '7-Day Delivery']
+                    features: ['1 Reel (up to 60s)', 'Professional Editing', 'Soundtrack', 'Color Grading', 'Script & Direction', '7-Day Delivery']
                 },
                 pack5: {
                     name: '5 Videos Pack',
-                    features: ['5 Reels (up to 60s)', 'Professional Recording', 'Professional Editing', 'Soundtrack', 'Color Grading', 'Script & Direction', '7-Day Delivery']
+                    features: ['5 Reels (up to 60s)', 'Professional Editing', 'Soundtrack', 'Color Grading', 'Script & Direction', '7-Day Delivery']
                 },
                 pack10: {
                     name: '10 Videos Pack',
-                    features: ['10 Reels (up to 60s)', 'Professional Recording', 'Professional Editing', 'Soundtrack', 'Color Grading', 'Script & Direction', '7-Day Delivery']
+                    features: ['10 Reels (up to 60s)', 'Professional Editing', 'Soundtrack', 'Color Grading', 'Script & Direction', '7-Day Delivery']
                 },
                 ultra: {
                     name: 'Ultra',
-                    features: ['Above 10 Reels', 'Professional Recording', 'Custom Package', 'Negotiated Separately']
+                    features: ['Above 10 Reels', 'Custom Package', 'Negotiated Separately']
                 }
             }
         },
@@ -176,19 +176,19 @@ export const translations = {
             packages: {
                 single: {
                     name: '1 Video',
-                    features: ['1 Reel (hasta 60s)', 'Grabación Profesional', 'Edición Profesional', 'Banda Sonora', 'Color Grading', 'Guión & Dirección', 'Entrega en 7 días']
+                    features: ['1 Reel (hasta 60s)', 'Edición Profesional', 'Banda Sonora', 'Color Grading', 'Guión & Dirección', 'Entrega en 7 días']
                 },
                 pack5: {
                     name: 'Paquete 5 Videos',
-                    features: ['5 Reels (hasta 60s)', 'Grabación Profesional', 'Edición Profesional', 'Banda Sonora', 'Color Grading', 'Guión & Dirección', 'Entrega en 7 días']
+                    features: ['5 Reels (hasta 60s)', 'Edición Profesional', 'Banda Sonora', 'Color Grading', 'Guión & Dirección', 'Entrega en 7 días']
                 },
                 pack10: {
                     name: 'Paquete 10 Videos',
-                    features: ['10 Reels (hasta 60s)', 'Grabación Profesional', 'Edición Profesional', 'Banda Sonora', 'Color Grading', 'Guión & Dirección', 'Entrega en 7 días']
+                    features: ['10 Reels (hasta 60s)', 'Edición Profesional', 'Banda Sonora', 'Color Grading', 'Guión & Dirección', 'Entrega en 7 días']
                 },
                 ultra: {
                     name: 'Ultra',
-                    features: ['Más de 10 Reels', 'Grabación Profesional', 'Paquete Personalizado', 'Negociado Aparte']
+                    features: ['Más de 10 Reels', 'Paquete Personalizado', 'Negociado Aparte']
                 }
             }
         },

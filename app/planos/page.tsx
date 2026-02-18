@@ -64,14 +64,14 @@ export default function Plans() {
                                 className={`relative z-10 px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200 w-40 ${activeTab === 'realEstate' ? 'text-white' : 'text-zinc-500 hover:text-black'
                                     }`}
                             >
-                                Imobiliárias
+                                {t.plans.toggle.realEstate}
                             </button>
                             <button
                                 onClick={() => setActiveTab('videomaker')}
                                 className={`relative z-10 px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200 w-40 ${activeTab === 'videomaker' ? 'text-white' : 'text-zinc-500 hover:text-black'
                                     }`}
                             >
-                                Videomakers
+                                {t.plans.toggle.videomaker}
                             </button>
                         </div>
                     </div>
@@ -108,8 +108,8 @@ export default function Plans() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`block w-full py-4 text-center rounded-full font-medium tracking-wide text-sm transition-colors ${pkg.isUltra
-                                        ? 'border border-zinc-700 hover:bg-white hover:text-black hover:border-white'
-                                        : 'bg-white text-black hover:bg-zinc-200'
+                                    ? 'border border-zinc-700 hover:bg-white hover:text-black hover:border-white'
+                                    : 'bg-white text-black hover:bg-zinc-200'
                                     }`}
                             >
                                 {activeTab === 'realEstate' ? t.plans.cta : t.plans_videomaker.cta}

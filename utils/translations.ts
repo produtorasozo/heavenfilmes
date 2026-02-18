@@ -25,6 +25,10 @@ export const translations = {
             subtitle: 'Escolha o plano ideal para você',
             cta: 'Contratar Agora',
             contact_button: 'Falar com Especialista',
+            toggle: {
+                realEstate: 'Imobiliárias',
+                videomaker: 'Videomakers'
+            },
             packages: {
                 single: {
                     name: '1 Vídeo',
@@ -93,6 +97,10 @@ export const translations = {
             subtitle: 'Choose the perfect plan for you',
             cta: 'Hire Now',
             contact_button: 'Talk to Expert',
+            toggle: {
+                realEstate: 'Real Estate',
+                videomaker: 'Videomakers'
+            },
             packages: {
                 single: {
                     name: '1 Video',
@@ -161,6 +169,10 @@ export const translations = {
             subtitle: 'Elige el plan ideal para tu propiedad',
             cta: 'Contratar Ahora',
             contact_button: 'Hablar con Especialista',
+            toggle: {
+                realEstate: 'Inmobiliarias',
+                videomaker: 'Videomakers'
+            },
             packages: {
                 single: {
                     name: '1 Video',

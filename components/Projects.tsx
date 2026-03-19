@@ -6,10 +6,10 @@ import { useLanguage } from '@/context/LanguageContext';
 
 const projects = [
     {
-        title: "Quinta da Marinha - Portugal",
+        title: "Evolução de obra com IA",
         category: "Reels",
         year: "2025",
-        videoUrl: "https://www.youtube.com/embed/QfPYwZ9exrQ"
+        videoUrl: "https://player.vimeo.com/video/1175285329?fl=pl&fe=sh"
     },
     {
         title: "WOW - Cyrela",

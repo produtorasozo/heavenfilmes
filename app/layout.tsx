@@ -40,7 +40,8 @@ export default function RootLayout({
     <html lang="en" className={`${barlow.variable} ${archivo.variable} ${michroma.variable}`}>
       <body className="antialiased">
         {/* Site-wide ambient background, fixed behind every page */}
-        <div className="fixed inset-0 z-0 pointer-events-none">
+        {/* lvh = largest viewport height: stays constant while mobile browser bars show/hide */}
+        <div className="fixed inset-x-0 top-0 h-lvh z-0 pointer-events-none">
           <Plasma color="#ffffff" speed={0.5} scale={1.1} opacity={0.3} maxDpr={1} />
         </div>
         <LanguageProvider>

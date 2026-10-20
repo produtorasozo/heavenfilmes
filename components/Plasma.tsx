@@ -169,13 +169,25 @@ export default function Plasma({
             renderer.render({ scene: mesh });
         };
 
+        // Animation clock (shared with the resize handler so it can redraw immediately)
+        let elapsed = reduceMotion ? STILL_FRAME_SECONDS : 0;
+
+        // Resizing a WebGL canvas clears it, so only resize on a real size change
+        // and redraw in the same frame — otherwise the background flashes.
+        let width = 0;
+        let height = 0;
         const setSize = () => {
             const rect = container.getBoundingClientRect();
-            renderer.setSize(Math.max(1, Math.floor(rect.width)), Math.max(1, Math.floor(rect.height)));
+            const w = Math.max(1, Math.floor(rect.width));
+            const h = Math.max(1, Math.floor(rect.height));
+            if (w === width && h === height) return;
+            width = w;
+            height = h;
+            renderer.setSize(w, h);
             const res = program.uniforms.iResolution.value as Float32Array;
             res[0] = gl.drawingBufferWidth;
             res[1] = gl.drawingBufferHeight;
-            if (reduceMotion) render(STILL_FRAME_SECONDS);
+            render(elapsed);
         };
         const ro = new ResizeObserver(setSize);
         ro.observe(container);
@@ -193,7 +205,6 @@ export default function Plasma({
         // Animate only while visible
         let raf = 0;
         let visible = false;
-        let elapsed = 0;
         let last = 0;
         const loop = (t: number) => {
             elapsed += (t - last) * 0.001;

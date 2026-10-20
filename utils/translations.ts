@@ -18,7 +18,7 @@ export const translations = {
             next: 'O que vem a seguir?',
             title: 'Vamos criar algo extraordinário.',
             cta: 'Entre em Contato',
-            rights: '© 2026 Heaven Filmes',
+            rights: '© 2026 Heaven Creative',
         },
         plans: {
             title: 'Nossos Pacotes',
@@ -90,7 +90,7 @@ export const translations = {
             next: "What's Next?",
             title: "Let's create something extraordinary.",
             cta: 'Get in Touch',
-            rights: '© 2026 Heaven Filmes',
+            rights: '© 2026 Heaven Creative',
         },
         plans: {
             title: 'Our Packages',
@@ -162,7 +162,7 @@ export const translations = {
             next: '¿Qué sigue?',
             title: 'Creemos algo extraordinario.',
             cta: 'Ponerse en Contacto',
-            rights: '© 2026 Heaven Filmes',
+            rights: '© 2026 Heaven Creative',
         },
         plans: {
             title: 'Nuestros Paquetes',

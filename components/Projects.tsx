@@ -4,110 +4,75 @@ import { motion } from 'framer-motion';
 
 import { useLanguage } from '@/context/LanguageContext';
 
-const projects = [
-    {
-        title: "Evolução de obra com IA",
-        category: "Reels",
-        year: "2025",
-        videoUrl: "https://player.vimeo.com/video/1175285329?fl=pl&fe=sh"
-    },
-    {
-        title: "WOW - Cyrela",
-        category: "Reels",
-        year: "2025",
-        videoUrl: "https://www.youtube.com/embed/gZZNUYsEAH4"
-    },
-    {
-        title: "Grand Village - Living",
-        category: "Reels",
-        year: "2025",
-        videoUrl: "https://player.vimeo.com/video/1165476441"
-    },
-    {
-        title: "Vila Real - Douglas Navarro",
-        category: "Reels",
-        year: "2025",
-        videoUrl: "https://player.vimeo.com/video/1165466983"
-    },
-    {
-        title: "Vila Real - Adore",
-        category: "Reels",
-        year: "2025",
-        videoUrl: "https://www.youtube.com/embed/aCC6ZVRwVlg"
-    },
-    {
-        title: "Xapada - Forbens",
-        category: "Reels",
-        year: "2025",
-        videoUrl: "https://player.vimeo.com/video/1165477215"
-    },
-    {
-        title: "Portugal - Apartamento Praia",
-        category: "Reels",
-        year: "2025",
-        videoUrl: "https://www.youtube.com/embed/lLWfDYp2Ics"
-    },
-    {
-        title: "Terras de Sao José I",
-        category: "Reels",
-        year: "2025",
-        videoUrl: "https://www.youtube.com/embed/n_IGTUTiiRg"
-    }
+// Portfolio videos hosted on Wistia (all vertical, 720×1280).
+// `type` maps to the localized service names used on the plans page.
+type Project = {
+    title: string;
+    type: 'shootAndEdit' | 'edit';
+    wistiaId: string;
+};
+
+const projects: Project[] = [
+    { title: 'Oakland Florida', type: 'edit', wistiaId: 'v1jpr7zbzk' },
+    { title: 'Living', type: 'shootAndEdit', wistiaId: 'qjsro1i26p' },
+    { title: 'Living', type: 'shootAndEdit', wistiaId: 'fojpg2tb1u' },
+    { title: 'Winter Garden', type: 'edit', wistiaId: 'hensgjz8zw' },
+    { title: 'Cyrela', type: 'shootAndEdit', wistiaId: '6rtgj4jso6' },
+    { title: 'Living', type: 'shootAndEdit', wistiaId: 'lkdgrnss93' },
+    { title: 'Living', type: 'shootAndEdit', wistiaId: '230i0v3saz' },
+    { title: 'Orlando', type: 'edit', wistiaId: 'vhcdmxspcr' },
+    { title: 'Cyrela', type: 'shootAndEdit', wistiaId: 'kx12qx1s7m' },
 ];
+
+const wistiaEmbed = (id: string) => `https://fast.wistia.net/embed/iframe/${id}?playerColor=ffffff`;
 
 export default function Projects() {
     const { t } = useLanguage();
 
     return (
-        <section className="min-h-screen w-full bg-white px-4 md:px-6 py-16 md:py-32 relative z-10">
-            <div className="max-w-7xl mx-auto">
-                <motion.h2
+        <section id="work" className="relative z-10 w-full py-(--section-y) lg:py-30">
+            <div className="container-page">
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-6xl font-bold text-black mb-12 md:mb-24 tracking-tight"
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex flex-col items-center text-center mb-14 md:mb-20"
                 >
-                    {t.projects.title}
-                </motion.h2>
+                    <span className="type-label text-fg mb-4">{t.hero.role}</span>
+                    <h2 className="type-display text-[clamp(1.375rem,6.5vw,2rem)] md:text-h1 leading-[1.05] text-fg text-balance md:whitespace-nowrap">{t.projects.title}</h2>
+                </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-12 gap-y-12 md:gap-y-24">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-8 gap-y-12 md:gap-y-16 max-w-sm sm:max-w-none mx-auto">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <motion.article
                             key={index}
-                            initial={{ opacity: 0, y: 40 }}
+                            initial={{ opacity: 0, y: 32 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group cursor-pointer"
+                            transition={{ duration: 0.6, delay: (index % 3) * 0.08, ease: [0.22, 1, 0.36, 1] }}
                         >
                             {/* Media Container */}
-                            <div className="aspect-[9/16] md:aspect-[4/3] bg-zinc-900 rounded-lg mb-4 md:mb-6 overflow-hidden relative">
-                                {project.videoUrl ? (
-                                    <iframe
-                                        src={project.videoUrl}
-                                        className="absolute inset-0 w-full h-full"
-                                        title={project.title}
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowFullScreen
-                                    />
-                                ) : (
-                                    <>
-                                        <div className="absolute inset-0 bg-zinc-800 transition-transform duration-700 group-hover:scale-105" />
-                                        {/* Simulate image */}
-                                    </>
-                                )}
+                            <div className="aspect-[9/16] bg-surface overflow-hidden relative">
+                                <iframe
+                                    src={wistiaEmbed(project.wistiaId)}
+                                    className="absolute inset-0 w-full h-full"
+                                    title={project.title}
+                                    loading="lazy"
+                                    allow="autoplay; fullscreen; picture-in-picture"
+                                    allowFullScreen
+                                />
                             </div>
 
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-baseline border-b border-zinc-200 pb-3 md:pb-4 gap-2 md:gap-0 transition-colors group-hover:border-black">
-                                <h3 className="text-xl md:text-3xl font-medium text-black group-hover:text-zinc-600 transition-colors">
+                            <div className="mt-5 text-center [text-shadow:var(--shadow-text-on-media)]">
+                                <h3 className="type-display text-h3 text-fg">
                                     {project.title}
                                 </h3>
-                                <div className="flex gap-4 text-zinc-500 font-mono text-sm">
-                                    <span>{project.category}</span>
-                                    <span>{project.year}</span>
-                                </div>
+                                <p className="type-label text-caption text-fg mt-2">
+                                    {project.type === 'shootAndEdit' ? t.plans.toggle.realEstate : t.plans.toggle.videomaker}
+                                </p>
                             </div>
-                        </motion.div>
+                        </motion.article>
                     ))}
                 </div>
             </div>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { motion } from 'framer-motion';
+import Button from '@/components/Button';
 
 export default function Plans() {
     const { t } = useLanguage();
@@ -32,44 +33,42 @@ export default function Plans() {
     const packages = getPackages();
 
     return (
-        <main className="min-h-screen bg-white text-black pt-20 md:pt-32 pb-12 md:pb-20 px-4 md:px-6">
-            <div className="max-w-7xl mx-auto">
+        <main className="relative z-10 min-h-screen text-fg pt-[calc(var(--header-height)+3rem)] md:pt-[calc(var(--header-height)+5rem)] pb-(--section-y)">
+            <div className="container-page">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center mb-12"
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-center mb-12 md:mb-16"
                 >
-                    <h1 className="text-4xl md:text-7xl font-bold mb-4 md:mb-6 tracking-tight">
+                    <h1 className="type-display text-display mb-4 md:mb-6">
                         {currentPlans.title}
                     </h1>
-                    <p className="text-zinc-600 text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide uppercase mb-8">
+                    <p className="type-label text-fg max-w-2xl mx-auto mb-10">
                         {currentPlans.subtitle}
                     </p>
 
-                    {/* Toggle Switch */}
-                    <div className="flex justify-center mb-12">
-                        <div className="bg-zinc-100 p-1 rounded-full inline-flex relative">
+                    {/* Toggle: square segmented control */}
+                    <div className="flex justify-center">
+                        <div className="inline-grid grid-cols-2 border border-border-strong bg-background relative" role="group">
                             <motion.div
-                                className="absolute top-1 bottom-1 bg-black rounded-full shadow-md z-0"
+                                className="absolute inset-y-0 left-0 w-1/2 bg-fg z-0"
                                 initial={false}
-                                animate={{
-                                    x: activeTab === 'realEstate' ? 0 : '100%',
-                                    width: '50%'
-                                }}
-                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                animate={{ x: activeTab === 'realEstate' ? 0 : '100%' }}
+                                transition={{ duration: 0.25, ease: [0.65, 0, 0.35, 1] }}
+                                aria-hidden="true"
                             />
                             <button
+                                aria-pressed={activeTab === 'realEstate'}
                                 onClick={() => setActiveTab('realEstate')}
-                                className={`relative z-10 px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200 w-40 ${activeTab === 'realEstate' ? 'text-white' : 'text-zinc-500 hover:text-black'
-                                    }`}
+                                className={`type-label relative z-10 min-h-11 px-4 sm:px-6 py-3 transition-colors duration-(--duration-instant) ease-standard ${activeTab === 'realEstate' ? 'text-fg-inverse' : 'text-fg-muted hover:text-fg'}`}
                             >
                                 {t.plans.toggle.realEstate}
                             </button>
                             <button
+                                aria-pressed={activeTab === 'videomaker'}
                                 onClick={() => setActiveTab('videomaker')}
-                                className={`relative z-10 px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200 w-40 ${activeTab === 'videomaker' ? 'text-white' : 'text-zinc-500 hover:text-black'
-                                    }`}
+                                className={`type-label relative z-10 min-h-11 px-4 sm:px-6 py-3 transition-colors duration-(--duration-instant) ease-standard ${activeTab === 'videomaker' ? 'text-fg-inverse' : 'text-fg-muted hover:text-fg'}`}
                             >
                                 {t.plans.toggle.videomaker}
                             </button>
@@ -77,56 +76,50 @@ export default function Plans() {
                     </div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mb-14 md:mb-20">
                     {packages.map((pkg, index) => (
                         <div
                             key={index}
-                            className={`p-8 rounded-2xl shadow-2xl hover:scale-[1.02] transition-transform duration-300 flex flex-col relative overflow-hidden ${pkg.isUltra ? 'bg-zinc-950 text-white' : 'bg-black text-white'
-                                } ${pkg.highlight ? 'border-2 border-zinc-800' : ''}`}
+                            className={`relative flex flex-col p-6 md:p-8 border transition-colors duration-(--duration-base) ease-out-cubic ${pkg.highlight
+                                ? 'border-border-strong'
+                                : 'border-border hover:border-border-muted'
+                                } bg-surface`}
                         >
                             {pkg.highlight && (
-                                <div className="absolute top-0 right-0 bg-white text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
+                                <div className="absolute top-0 right-0 bg-fg text-fg-inverse type-label text-caption px-3 py-1.5">
                                     Popular
                                 </div>
                             )}
 
-                            <h3 className={`text-2xl font-bold mb-6 ${pkg.isUltra ? 'bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent' : ''}`}>
+                            <h3 className="type-display text-h2 mb-6 pr-16">
                                 {pkg.name}
                             </h3>
 
-                            <ul className="space-y-4 mb-10 flex-grow">
+                            <ul className="space-y-3 mb-10 flex-grow">
                                 {pkg.features.map((feature, i) => (
-                                    <li key={i} className="flex items-center gap-3 text-zinc-300 text-sm">
-                                        <span className="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0" />
+                                    <li key={i} className="flex items-start gap-3 text-fg-muted">
+                                        <span className="mt-2 w-1.5 h-1.5 bg-fg flex-shrink-0" aria-hidden="true" />
                                         {feature}
                                     </li>
                                 ))}
                             </ul>
 
-                            <a
+                            <Button
                                 href="https://wa.link/30umru"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`block w-full py-4 text-center rounded-full font-medium tracking-wide text-sm transition-colors ${pkg.isUltra
-                                    ? 'border border-zinc-700 hover:bg-white hover:text-black hover:border-white'
-                                    : 'bg-white text-black hover:bg-zinc-200'
-                                    }`}
+                                external
+                                variant={pkg.highlight ? 'primary' : 'outline'}
+                                className="w-full min-w-0"
                             >
                                 {activeTab === 'realEstate' ? t.plans.cta : t.plans_videomaker.cta}
-                            </a>
+                            </Button>
                         </div>
                     ))}
                 </div>
 
                 <div className="text-center">
-                    <a
-                        href="https://wa.link/30umru"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-8 py-4 border border-zinc-200 rounded-full hover:border-black hover:bg-black hover:text-white transition-all text-zinc-600 uppercase tracking-widest text-sm"
-                    >
+                    <Button href="https://wa.link/30umru" external variant="link">
                         {t.plans.contact_button}
-                    </a>
+                    </Button>
                 </div>
             </div>
         </main>

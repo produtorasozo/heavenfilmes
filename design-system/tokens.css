@@ -1,0 +1,147 @@
+/*
+ * Heaven — design tokens
+ * Derivados da análise em design-system/reference-analysis.md (linguagem visual
+ * inspirada na RED Digital Cinema; nenhum asset ou fonte proprietária da RED).
+ *
+ * Stack: Next.js + Tailwind CSS v4 (importado em app/globals.css).
+ * - @theme        → vira custom property em :root E utilitário do Tailwind
+ *                   (--color-surface → bg-surface, --text-display → text-display…)
+ *   (as famílias apontam para as variáveis do next/font, aplicadas no <html>)
+ * - :root         → tokens sem utilitário do Tailwind (espaçamento, motion, gradientes)
+ *
+ * Decisões de marca (20/10/2026): acento monocromático (sem o vermelho da RED);
+ * o nome "Heaven Creative" continua em Michroma.
+ */
+
+@theme {
+  /* ---------- Color: superfícies ---------- */
+  --color-background: #000000;                       /* palco: fundo da página */
+  --color-surface: #0a0a0a;                          /* seções alternadas */
+  --color-surface-raised: rgba(255, 255, 255, 0.08); /* cards de dados, tabelas */
+  --color-surface-overlay: rgba(20, 20, 20, 0.96);   /* menus, drawers */
+  --color-scrim: rgba(0, 0, 0, 0.75);                /* base de gradientes sobre mídia */
+
+  /* ---------- Color: texto ---------- */
+  --color-fg: #ffffff;                 /* primário — 21:1 sobre preto */
+  --color-fg-muted: #b3b3b3;           /* secundário — 10:1 */
+  --color-fg-subtle: #999999;          /* metadados, placeholders — 7.4:1 */
+  --color-fg-disabled: rgba(255, 255, 255, 0.5);
+  --color-fg-inverse: #000000;         /* texto sobre fundo branco */
+
+  /* ---------- Color: bordas ---------- */
+  --color-border: rgba(255, 255, 255, 0.2);       /* divisores */
+  --color-border-muted: rgba(255, 255, 255, 0.5); /* inputs/cards em repouso */
+  --color-border-strong: #ffffff;                 /* botões outline, destaque */
+
+  /* ---------- Color: acento (monocromático) ---------- */
+  --color-accent: #ffffff;             /* preenchimento do botão primário */
+  --color-accent-hover: #d9d9d9;
+  --color-accent-fg: #000000;          /* texto sobre accent — 21:1 */
+  --color-accent-text: #ffffff;        /* item ativo / hover de link */
+
+  /* ---------- Color: estados ---------- */
+  --color-focus: #ffffff;
+  --color-ghost: rgba(0, 0, 0, 0.1);   /* fundo do botão outline sobre mídia */
+
+  /* ---------- Typography: escala fluida display → caption ---------- */
+  --text-display: clamp(2.5rem, 5vw, 4.6875rem);   /* 40 → 75px */
+  --text-display--line-height: 1;
+  --text-outline: clamp(1.75rem, 4.6vw, 5.5rem);   /* 28 → 88px, título em contorno (1 linha) */
+  --text-outline--line-height: 1;
+  --text-h1: clamp(1.75rem, 3vw, 2.625rem);        /* 28 → 42px */
+  --text-h1--line-height: 1.2;
+  --text-h2: clamp(1.125rem, 1.8vw, 1.625rem);     /* 18 → 26px */
+  --text-h2--line-height: 1.2;
+  --text-h3: 1.25rem;                              /* 20px */
+  --text-h3--line-height: 1.2;
+  --text-lead: clamp(1rem, 1.333vw, 1.25rem);      /* 16 → 20px */
+  --text-lead--line-height: 1.6;
+  --text-body: 0.9375rem;                          /* 15px */
+  --text-body--line-height: 1.6;
+  --text-label: 0.9375rem;                         /* 15px nav/botões */
+  --text-label--line-height: 1.2;
+  --text-caption: 0.8125rem;                       /* 13px */
+  --text-caption--line-height: 1.2;
+
+  --tracking-label: 0.1em;     /* ~1.5px em 15px */
+  --tracking-footer: 0.05em;
+
+  /* ---------- Radius ---------- */
+  --radius-none: 0;
+  --radius-sm: 3px;            /* só campos de busca */
+
+  /* ---------- Motion: easing ---------- */
+  --ease-standard: ease-in-out;
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---------- Breakpoints (mobile first) ---------- */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1440px;
+}
+
+@theme {
+  /* ---------- Typography: famílias (variáveis do next/font, aplicadas no <html> em app/layout.tsx) ---------- */
+  --font-wordmark: var(--font-michroma), sans-serif;             /* só o nome "Heaven Creative" */
+  --font-display: var(--font-archivo), "Arial Black", sans-serif; /* Archivo wdth 125, 800–900 */
+  --font-sans: var(--font-barlow), Helvetica, Arial, sans-serif; /* corpo, nav, botões */
+}
+
+:root {
+  --font-display-stretch: 125%;
+  --text-stroke-outline: 2px;
+
+  /* ---------- Spacing (base 4px) ---------- */
+  --space-1: 0.25rem;  /* 4  */
+  --space-2: 0.5rem;   /* 8  */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 — gutter mobile */
+  --space-5: 1.25rem;  /* 20 — gutter desktop */
+  --space-6: 1.75rem;  /* 28 */
+  --space-7: 2.5rem;   /* 40 */
+  --space-8: 3rem;     /* 48 */
+  --space-9: 5rem;     /* 80 — padding de seção */
+  --space-10: 7.5rem;  /* 120 */
+
+  --container-max: 1440px;
+  --container-text: 850px;
+  --gutter: var(--space-4);
+  --section-y: var(--space-9);
+  --header-height: 80px;
+
+  /* ---------- Shadow / overlays ---------- */
+  --shadow-none: none;
+  --shadow-text-on-media: 0 1px 12px rgba(0, 0, 0, 0.5);
+  --gradient-surface: linear-gradient(#000000, #222222 70%, #000000);
+  --gradient-media-bottom: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.75) 75%);
+  --gradient-media-radial: radial-gradient(closest-side, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  --gradient-ticker: radial-gradient(circle, rgba(0, 0, 0, 0.83), rgba(0, 0, 0, 0)); /* faixa de capas */
+
+  /* ---------- Motion: durações ---------- */
+  --duration-instant: 100ms;  /* inversão do botão outline */
+  --duration-fast: 175ms;     /* micro-interações */
+  --duration-base: 250ms;     /* links */
+  --duration-slow: 333ms;     /* revelar tiles, drawer */
+  --duration-color: 300ms;    /* cor de nav */
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: var(--space-5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0ms;
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --duration-color: 0ms;
+  }
+}

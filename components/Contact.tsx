@@ -3,41 +3,59 @@
 import { motion } from 'framer-motion';
 
 import { useLanguage } from '@/context/LanguageContext';
+import Button from '@/components/Button';
 
 export default function Contact() {
     const { t } = useLanguage();
 
+    const footerLinks = [
+        { href: 'https://www.instagram.com/hvncreative/', label: 'Instagram' },
+        { href: '#', label: 'LinkedIn' },
+    ];
+
     return (
-        <section id="contact" className="min-h-screen w-full bg-black flex flex-col justify-center items-center px-4 md:px-6 py-12 md:py-0 relative z-10">
-            <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="text-center"
-            >
-                <p className="text-zinc-500 uppercase tracking-widest mb-8">{t.contact.next}</p>
-                <h2 className="text-3xl md:text-8xl font-bold text-white mb-8 md:mb-12 max-w-4xl leading-tight px-4">
-                    {t.contact.title}
-                </h2>
+        <section id="contact" className="relative z-10 w-full">
+            <div className="relative overflow-hidden">
+                {/* Readability: soft dark pool behind the text over the site background */}
+                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.25)_55%,transparent_80%)]" />
 
-                <a
-                    href="https://wa.link/30umru"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-8 md:px-12 py-4 md:py-6 bg-white text-black text-base md:text-lg font-semibold rounded-full hover:bg-zinc-200 transition-colors"
-                >
-                    {t.contact.cta}
-                </a>
-            </motion.div>
-
-            <div className="absolute bottom-4 md:bottom-12 w-full flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 px-4 md:px-12 text-zinc-500 text-xs md:text-sm font-mono">
-                <span>{t.contact.rights}</span>
-                <div className="flex gap-4 md:gap-8">
-                    <a href="https://www.instagram.com/hvncreative/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
-                    <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+                <div className="relative container-page min-h-[80svh] flex items-center justify-center py-(--section-y)">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                        className="max-w-(--container-text) text-center flex flex-col items-center"
+                    >
+                        <p className="type-label text-fg-muted mb-6">{t.contact.next}</p>
+                        <h2 className="type-display text-[clamp(1.375rem,6.5vw,3.5rem)] leading-[1.05] text-fg mb-10 md:mb-12 text-balance">
+                            {t.contact.title}
+                        </h2>
+                        <Button href="https://wa.link/30umru" variant="primary" external>
+                            {t.contact.cta}
+                        </Button>
+                    </motion.div>
                 </div>
             </div>
+
+            <footer className="border-t border-border pt-12 pb-16 md:pb-24 px-(--gutter) flex flex-col items-center gap-6 text-center">
+                <ul className="flex flex-wrap justify-center items-center">
+                    {footerLinks.map((link, i) => (
+                        <li key={link.label} className="flex items-center">
+                            {i > 0 && <span className="px-3 text-fg" aria-hidden="true">·</span>}
+                            <a
+                                href={link.href}
+                                target={link.href.startsWith('http') ? '_blank' : undefined}
+                                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                className="type-label tracking-footer inline-flex items-center min-h-11 px-1 text-fg hover:text-fg-muted transition-colors duration-(--duration-color) ease-standard"
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+                <span className="text-caption text-fg">{t.contact.rights}</span>
+            </footer>
         </section>
     );
 }
